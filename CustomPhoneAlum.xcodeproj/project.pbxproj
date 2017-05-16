@@ -7,14 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B30F768B1EC9AD8800FD1F48 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30F768A1EC9AD8800FD1F48 /* Frame.swift */; };
+		B31CD43F1ECAD0B80070E8C9 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31CD43E1ECAD0B80070E8C9 /* Global.swift */; };
+		B31CD4411ECB06C30070E8C9 /* GFPhotoLargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31CD4401ECB06C30070E8C9 /* GFPhotoLargeCell.swift */; };
 		B33E14F21EBC170C00501272 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E14F11EBC170C00501272 /* AppDelegate.swift */; };
 		B33E14F41EBC170C00501272 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E14F31EBC170C00501272 /* ViewController.swift */; };
 		B33E14F71EBC170C00501272 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B33E14F51EBC170C00501272 /* Main.storyboard */; };
 		B33E14F91EBC170C00501272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B33E14F81EBC170C00501272 /* Assets.xcassets */; };
 		B33E14FC1EBC170C00501272 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B33E14FA1EBC170C00501272 /* LaunchScreen.storyboard */; };
+		B372D6ED1EC97BFF00CBE210 /* GFLargePhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372D6EC1EC97BFF00CBE210 /* GFLargePhotoController.swift */; };
+		B372D6EF1EC97C3300CBE210 /* GFPhotoAllController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372D6EE1EC97C3300CBE210 /* GFPhotoAllController.swift */; };
+		B372D6F11EC9800300CBE210 /* GFAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372D6F01EC9800300CBE210 /* GFAsset.swift */; };
+		B3A0F4BA1EBC582E004EF93C /* GFPhotoNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A0F4B91EBC582E004EF93C /* GFPhotoNormalCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B30F768A1EC9AD8800FD1F48 /* Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
+		B31CD43E1ECAD0B80070E8C9 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		B31CD4401ECB06C30070E8C9 /* GFPhotoLargeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFPhotoLargeCell.swift; sourceTree = "<group>"; };
 		B33E14EE1EBC170C00501272 /* CustomPhoneAlum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomPhoneAlum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33E14F11EBC170C00501272 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B33E14F31EBC170C00501272 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +32,12 @@
 		B33E14F81EBC170C00501272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B33E14FB1EBC170C00501272 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B33E14FD1EBC170C00501272 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B33E15091EBC1A7700501272 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		B33E150B1EBC1EB100501272 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		B372D6EC1EC97BFF00CBE210 /* GFLargePhotoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFLargePhotoController.swift; sourceTree = "<group>"; };
+		B372D6EE1EC97C3300CBE210 /* GFPhotoAllController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFPhotoAllController.swift; sourceTree = "<group>"; };
+		B372D6F01EC9800300CBE210 /* GFAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFAsset.swift; sourceTree = "<group>"; };
+		B3A0F4B91EBC582E004EF93C /* GFPhotoNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFPhotoNormalCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +56,7 @@
 			children = (
 				B33E14F01EBC170C00501272 /* CustomPhoneAlum */,
 				B33E14EF1EBC170C00501272 /* Products */,
+				B33E15081EBC1A7700501272 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +71,7 @@
 		B33E14F01EBC170C00501272 /* CustomPhoneAlum */ = {
 			isa = PBXGroup;
 			children = (
+				B33E15051EBC198400501272 /* GFPhoneAlum */,
 				B33E14F11EBC170C00501272 /* AppDelegate.swift */,
 				B33E14F31EBC170C00501272 /* ViewController.swift */,
 				B33E14F51EBC170C00501272 /* Main.storyboard */,
@@ -62,6 +80,29 @@
 				B33E14FD1EBC170C00501272 /* Info.plist */,
 			);
 			path = CustomPhoneAlum;
+			sourceTree = "<group>";
+		};
+		B33E15051EBC198400501272 /* GFPhoneAlum */ = {
+			isa = PBXGroup;
+			children = (
+				B372D6EE1EC97C3300CBE210 /* GFPhotoAllController.swift */,
+				B372D6EC1EC97BFF00CBE210 /* GFLargePhotoController.swift */,
+				B372D6F01EC9800300CBE210 /* GFAsset.swift */,
+				B3A0F4B91EBC582E004EF93C /* GFPhotoNormalCell.swift */,
+				B30F768A1EC9AD8800FD1F48 /* Frame.swift */,
+				B31CD43E1ECAD0B80070E8C9 /* Global.swift */,
+				B31CD4401ECB06C30070E8C9 /* GFPhotoLargeCell.swift */,
+			);
+			path = GFPhoneAlum;
+			sourceTree = "<group>";
+		};
+		B33E15081EBC1A7700501272 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B33E150B1EBC1EB100501272 /* Photos.framework */,
+				B33E15091EBC1A7700501272 /* AssetsLibrary.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +138,7 @@
 					B33E14ED1EBC170C00501272 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = T7U5EL3U9U;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -137,8 +179,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B31CD43F1ECAD0B80070E8C9 /* Global.swift in Sources */,
+				B372D6F11EC9800300CBE210 /* GFAsset.swift in Sources */,
 				B33E14F41EBC170C00501272 /* ViewController.swift in Sources */,
+				B30F768B1EC9AD8800FD1F48 /* Frame.swift in Sources */,
 				B33E14F21EBC170C00501272 /* AppDelegate.swift in Sources */,
+				B3A0F4BA1EBC582E004EF93C /* GFPhotoNormalCell.swift in Sources */,
+				B31CD4411ECB06C30070E8C9 /* GFPhotoLargeCell.swift in Sources */,
+				B372D6EF1EC97C3300CBE210 /* GFPhotoAllController.swift in Sources */,
+				B372D6ED1EC97BFF00CBE210 /* GFLargePhotoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,11 +310,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = T7U5EL3U9U;
 				INFOPLIST_FILE = CustomPhoneAlum/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GofeyLee.CustomPhoneAlum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -274,8 +326,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = T7U5EL3U9U;
 				INFOPLIST_FILE = CustomPhoneAlum/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GofeyLee.CustomPhoneAlum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -302,6 +356,7 @@
 				B33E15021EBC170C00501272 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
