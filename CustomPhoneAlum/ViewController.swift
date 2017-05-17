@@ -9,11 +9,13 @@
 import UIKit
 import Photos
 
-class ViewController: UIViewController {
+class ViewController: UIViewController ,GFPhotoAlubmDelegate{
 
+    let imageView = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: Screen.width, height: Screen.height))
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.view.addSubview(imageView)
         
         let btn = UIButton.init(type: UIButtonType.system)
         self.view.addSubview(btn)
@@ -50,11 +52,16 @@ class ViewController: UIViewController {
             print("authorized")
             
             let gf = GFPhotoAllController()
-            
+            gf.delegate = self
             let nav = UINavigationController.init(rootViewController: gf)
 
             self.present(nav, animated: true, completion: nil)
         }
+    }
+    
+    func photoAlubmSelectedImageArray(selectedImgArray: Array<UIImage>) {
+        print("\(selectedImgArray.count)")
+        imageView.image = selectedImgArray[0]
     }
     
     override func didReceiveMemoryWarning() {

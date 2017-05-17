@@ -9,9 +9,28 @@
 import UIKit
 
 class GFPhotoLargeCell: UICollectionViewCell {
-    var asset:GFAsset
+    
+    var asset:GFAsset? {
+        didSet {
+            asset?.loadfullResolutionImage(completion: { (image) in
+                self.largePhotoImgView.image = image
+            })
+        }
+    }
+    
+    private let largePhotoImgView = UIImageView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.contentView.backgroundColor = UIColor.black
+        largePhotoImgView.frame = CGRect.init(x: 0, y: 0, width: Screen.width, height: frame.height)
+        self.contentView.addSubview(largePhotoImgView)
+        largePhotoImgView.clipsToBounds = true
+        largePhotoImgView.contentMode = .scaleAspectFill
         
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

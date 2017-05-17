@@ -89,9 +89,9 @@
 				B372D6EC1EC97BFF00CBE210 /* GFLargePhotoController.swift */,
 				B372D6F01EC9800300CBE210 /* GFAsset.swift */,
 				B3A0F4B91EBC582E004EF93C /* GFPhotoNormalCell.swift */,
+				B31CD4401ECB06C30070E8C9 /* GFPhotoLargeCell.swift */,
 				B30F768A1EC9AD8800FD1F48 /* Frame.swift */,
 				B31CD43E1ECAD0B80070E8C9 /* Global.swift */,
-				B31CD4401ECB06C30070E8C9 /* GFPhotoLargeCell.swift */,
 			);
 			path = GFPhoneAlum;
 			sourceTree = "<group>";

@@ -8,34 +8,38 @@
 
 import UIKit
 import Photos
+protocol GFPhotoAlubmDelegate: NSObjectProtocol {
+    func photoAlubmSelectedImageArray(selectedImgArray: Array<UIImage>)
+}
+
 class GFPhotoAllController: UIViewController ,UICollectionViewDelegate ,UICollectionViewDataSource {
     
     private var assetArray:Array<GFAsset> = Array<GFAsset>()
 
     private var isEnough = false
     
+    weak var delegate:GFPhotoAlubmDelegate?
+    
     private var selectedIndexArray:Array<Int> = Array<Int>() {
         didSet {
             //photoSelectedCount = selectedIndexArray.count
             numberLabel.text = "\(selectedIndexArray.count)"
-            if selectedIndexArray.count <= 0 {
+            if selectedIndexArray.count == 0 {
                 numberLabel.isHidden = true
                 submitBtn.isEnabled = false
             }else{
                 numberLabel.isHidden = false
                 submitBtn.isEnabled = true
 
-                if selectedIndexArray.count == 9 && oldValue.count == 8 {
+                if selectedIndexArray.count == Global.PhotoCountMax && oldValue.count == Global.PhotoCountMax - 1 {
                     isEnough = true
                     collectionView.reloadData()
                 }
-                if selectedIndexArray.count == 8 && oldValue.count == 9 {
+                if selectedIndexArray.count == Global.PhotoCountMax - 1 && oldValue.count == Global.PhotoCountMax {
                     isEnough = false
                     collectionView.reloadData()
                 }
             }
-            
-            
         }
     }
     
@@ -53,8 +57,20 @@ class GFPhotoAllController: UIViewController ,UICollectionViewDelegate ,UICollec
         
         // Do any additional setup after loading the view.
         self.automaticallyAdjustsScrollViewInsets = false
+        self.setNav()
         self.openAlubm()
         self.createUI()
+    }
+    
+    private func setNav() {
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        let rightBtn = UIButton.init(type: .custom)
+        rightBtn.frame = CGRect.init(x: 0, y: 0, width: 45, height: 45)
+        rightBtn.setTitle("取消", for: .normal)
+        rightBtn.addTarget(self, action: #selector(cancelClick), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: rightBtn)
+        
     }
     
     private func createUI() {
@@ -82,8 +98,8 @@ class GFPhotoAllController: UIViewController ,UICollectionViewDelegate ,UICollec
         numberLabel.clipsToBounds = true
         numberLabel.font = UIFont.systemFont(ofSize: 18)
         numberLabel.textAlignment = .center
-        numberLabel.isHidden = true
         numberLabel.textColor = UIColor.white
+        numberLabel.isHidden = true
         
         submitBtn.frame = CGRect.init(x: numberLabel.frame.maxX + 3, y: 0, width: 40, height: Global.BottomViewHeight)
         bottomView.addSubview(submitBtn)
@@ -144,12 +160,44 @@ class GFPhotoAllController: UIViewController ,UICollectionViewDelegate ,UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        let largePhoto = GFLargePhotoController.init(assetArray: self.assetArray, selectedIndexArray: self.selectedIndexArray, currentIndex: indexPath.row, delegate: self.delegate) { (selectArray, assetArray) in
+            self.assetArray = assetArray
+            self.selectedIndexArray = selectArray
+            self.collectionView.reloadData()
+        }
+        self.navigationController?.pushViewController(largePhoto, animated: true)
         
     }
     
     //MARK: - btn Action
-    func submitBtnClick() {
+    @objc private func submitBtnClick() {
         
+        var imgArray = Array<UIImage>()
+        let group = DispatchGroup()
+        
+        for index in self.selectedIndexArray {
+            let selectedAsset = self.assetArray[index]
+            
+            group.enter()
+            selectedAsset.loadfullResolutionImage(completion: { (image) in
+                imgArray.append(image)
+                group.leave()
+            })
+        }
+        group.notify(queue: DispatchQueue.main) {
+            if let gate = self.delegate {
+                
+                print("\(imgArray.count)")
+                gate.photoAlubmSelectedImageArray(selectedImgArray: imgArray)
+                
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
+    @objc private func cancelClick() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
