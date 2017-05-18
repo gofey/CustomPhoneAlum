@@ -191,10 +191,7 @@ class GFLargePhotoController: UIViewController ,UICollectionViewDelegate, UIColl
         }
         group.notify(queue: DispatchQueue.main) {
             if let gate = self.delegate {
-                
-                print("\(imgArray.count)")
                 gate.photoAlubmSelectedImageArray(selectedImgArray: imgArray)
-                
                 self.dismiss(animated: true, completion: nil)
             }
         }

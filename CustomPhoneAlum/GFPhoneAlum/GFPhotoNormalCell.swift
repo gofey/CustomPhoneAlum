@@ -33,7 +33,7 @@ class GFPhotoNormalCell: UICollectionViewCell {
         imgView.clipsToBounds = true
         imgView.contentMode = .scaleAspectFill
         
-        selectBtn.frame = CGRect.init(x: frame.width - 25, y: 3, width: 22, height: 22)
+        selectBtn.frame = CGRect.init(x: frame.width - 33, y: 3, width: 30, height: 30)
         selectBtn.setImage(#imageLiteral(resourceName: "CheckmarkNormal"), for: UIControlState.normal)
         selectBtn.setImage(#imageLiteral(resourceName: "CheckmarkSelected"), for: UIControlState.selected)
         selectBtn.addTarget(self, action: #selector(selectBtnClickAction(sender:)), for: UIControlEvents.touchUpInside)

@@ -15,9 +15,9 @@ class GFAsset: NSObject {
             self.thumbnailImage = nil
         }
     }
-    public var isSelected:Bool?
-    public var thumbnailImage:UIImage?
-    public var fullResolutionImage:UIImage?
+    var isSelected:Bool?
+    private var thumbnailImage:UIImage?
+    private var fullResolutionImage:UIImage?
     
     convenience init(asset: PHAsset) {
         self.init()

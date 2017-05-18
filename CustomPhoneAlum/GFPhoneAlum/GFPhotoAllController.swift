@@ -187,10 +187,7 @@ class GFPhotoAllController: UIViewController ,UICollectionViewDelegate ,UICollec
         }
         group.notify(queue: DispatchQueue.main) {
             if let gate = self.delegate {
-                
-                print("\(imgArray.count)")
                 gate.photoAlubmSelectedImageArray(selectedImgArray: imgArray)
-                
                 self.dismiss(animated: true, completion: nil)
             }
         }

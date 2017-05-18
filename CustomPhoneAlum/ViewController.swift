@@ -38,7 +38,7 @@ class ViewController: UIViewController ,GFPhotoAlubmDelegate{
                     // 用户同意
                     
                     let gf = GFPhotoAllController()
-                    
+                    gf.delegate = self
                     let nav = UINavigationController.init(rootViewController: gf)
 
                     self.present(nav, animated: true, completion: nil)
