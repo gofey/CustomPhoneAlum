@@ -10,6 +10,7 @@
 但是单张照片显示的时候并不能放大缩小，功能以后完善，
 
 第一版效果如下
+
 ![images](http://ooy23086i.bkt.clouddn.com/photoAlum2.jpeg)
 
 ![images](http://ooy23086i.bkt.clouddn.com/photoAlum3.jpeg)
